@@ -8,19 +8,21 @@ import { text } from "stream/consumers";
 export const HoverEffect = ({
   items,
   className,
+  borderColor,
 }: {
   items: {
     text: string;
     icon: IconType;
   }[];
   className?: string;
+  borderColor?: string;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div
       className={cn(
-        "grid grid-cols-2  lg:grid-cols-3  py-10",
+        "grid grid-cols-2  md:grid-cols-3  py-10 place-items-center",
         className
       )}
     >
@@ -28,10 +30,10 @@ export const HoverEffect = ({
         const Icon = item.icon;
         return (
             <div
-                key={idx}
-                className="relative group  block p-2 h-full w-full"
-                onMouseEnter={() => setHoveredIndex(idx)}
-                onMouseLeave={() => setHoveredIndex(null)}
+              key={idx}
+              className="relative group  block p-2 h-full w-full"
+              onMouseEnter={() => setHoveredIndex(idx)}
+              onMouseLeave={() => setHoveredIndex(null)}
             >
                 <AnimatePresence>
                     {hoveredIndex === idx && (
@@ -40,17 +42,22 @@ export const HoverEffect = ({
                         layoutId="hoverBackground"
                         initial={{ opacity: 0 }}
                         animate={{
-                        opacity: 1,
-                        transition: { duration: 0.15 },
+                          opacity: 1,
+                          transition: { duration: 0.15 },
                         }}
                         exit={{
-                        opacity: 0,
-                        transition: { duration: 0.15, delay: 0.2 },
+                          opacity: 0,
+                          transition: { duration: 0.15, delay: 0.2 },
                         }}
                     />
                     )}
                 </AnimatePresence>
-                <div className="rounded-md w-full p-4 overflow-hidden bg-black group-hover:ring-2 ring-green-500 relative z-20 transition-all duration-500 cursor-pointer">
+                <div
+                  className={cn(
+                    "rounded-md w-full  overflow-hidden bg-black group-hover:ring-2 relative z-20 transition-all duration-500 cursor-pointer",
+                    borderColor
+                  )}
+                >
                     <div className="py-10 z-50 relative space-y-5">
                         <Icon className='w-8 h-8 mx-auto'/>
                         <p className="text-2xl font-bold text-center text-gray-300">{item?.text}</p>
