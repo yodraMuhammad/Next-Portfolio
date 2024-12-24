@@ -2,7 +2,7 @@
 import React from 'react'
 import Title from './Title'
 import { HoverEffect } from '@/components/ui/card-hover-effect'
-import { SiExpress, SiGit, SiJavascript, SiJupyter, SiLaravel, SiNextdotjs, SiNodedotjs, SiNumpy, SiPandas, SiPhp, SiPython, SiReact, SiScikitlearn, SiTailwindcss, SiTensorflow } from 'react-icons/si'
+import { SiBootstrap, SiExpress, SiGit, SiJavascript, SiJupyter, SiLaravel, SiNextdotjs, SiNodedotjs, SiNumpy, SiNuxtdotjs, SiPandas, SiPhp, SiPython, SiReact, SiScikitlearn, SiTailwindcss, SiTensorflow, SiVuedotjs } from 'react-icons/si'
 
 export default function Skills() {
     const skills = [
@@ -19,7 +19,7 @@ export default function Skills() {
             icon: SiNodedotjs,
         },
         {
-            text: 'React',
+            text: 'React.js',
             icon: SiReact,
         },
         {
@@ -27,8 +27,20 @@ export default function Skills() {
             icon: SiNextdotjs,
         },
         {
+            text: 'Vue.js',
+            icon: SiVuedotjs,
+        },
+        {
+            text: 'Nuxt.js',
+            icon: SiNuxtdotjs,
+        },
+        {
             text: 'Tailwind',
             icon: SiTailwindcss,
+        },
+        {
+            text: 'Bootstrap',
+            icon: SiBootstrap,
         },
         {
             text: 'Git',
