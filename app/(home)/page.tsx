@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import Skills from './components/Skills'
+import Project from './components/Project'
 
 export default function page() {
   return (
@@ -16,6 +17,7 @@ export default function page() {
       </div>
       <div className='max-w-7xl mx-auto p-5 mt-20'>
         <Skills/>
+        <Project/>
       </div>
     </div>
   )
